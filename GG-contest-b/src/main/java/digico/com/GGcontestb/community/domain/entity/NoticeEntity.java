@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -20,6 +22,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain=true)
 public class NoticeEntity {
 
+    @Id
+    @GeneratedValue()
     private Integer id;
     private String title;
     private String contents;

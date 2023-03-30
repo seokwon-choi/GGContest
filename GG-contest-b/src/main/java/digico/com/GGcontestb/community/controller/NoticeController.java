@@ -17,10 +17,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class NoticeController {
 
-
     private final NoticeService noticeService;
 
-    // Create
+    // // Create
     // @PostMapping(value = "/createNotice", consumes = { MediaType.APPLICATION_JSON_VALUE,
     //         MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE })
     // public Response<Object> createNotice(@RequestPart(value = "notice", required = true) AdmNoticeDto noticeDto,
@@ -29,7 +28,7 @@ public class NoticeController {
     //     return noticeService.createNotice(noticeDto, noticeImg, imgFile);
     // }
 
-    // // Readø
+    // // Read
     // // 전체조회
     // @GetMapping(value = "/getNoticeList")
     // public Response<List<AdmNoticeDto>> getNoticeList(Pageable pageable, NoticeQueryParameter noticeQueryParameter) {
