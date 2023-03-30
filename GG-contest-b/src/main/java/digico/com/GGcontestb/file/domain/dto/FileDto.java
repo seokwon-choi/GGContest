@@ -1,5 +1,8 @@
 package digico.com.GGcontestb.file.domain.dto;
 
+import lombok.Data;
+
+@Data
 public class FileDto {
 
     private String id;
