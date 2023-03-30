@@ -1,16 +1,12 @@
 package digico.com.GGcontestb.user.jwt;
 
 import java.security.PrivateKey;
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import digico.com.GGcontestb.user.domain.UserEntity;
 import io.jsonwebtoken.Jwts;
