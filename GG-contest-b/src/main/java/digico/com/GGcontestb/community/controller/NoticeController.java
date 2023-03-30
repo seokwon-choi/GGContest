@@ -50,13 +50,11 @@ public class NoticeController {
     }
 
     // Update
-    // @PostMapping(value = "/notice", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE,
-    //         MediaType.MULTIPART_FORM_DATA_VALUE })
-    // public Response<Object> updateNotice(@RequestPart(value = "notice", required = true) AdmNoticeDto noticeDto,
-    //         @RequestPart(value = "thumbNail", required = false) MultipartFile noticeImg,
-    //         @RequestPart(value = "attachments", required = false) List<MultipartFile> imgFile) throws IOException {
-    //     return noticeService.updateNotice(noticeDto, noticeImg, imgFile);
-    // }
+    @PostMapping(value = "/notice", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE })
+    public Response<Object> updateNotice(@RequestPart(value = "notice", required = true) NoticeDetailDto noticeDto,
+            @RequestPart(value = "attachments", required = false) MultipartFile attachments) throws IOException {
+        return noticeService.updateNotice(noticeDto, attachments);
+    }
 
 
     // GetFile
