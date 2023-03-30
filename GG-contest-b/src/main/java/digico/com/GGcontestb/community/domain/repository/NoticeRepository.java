@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import digico.com.GGcontestb.community.domain.entity.NoticeEntity;
 
 @Repository
-public interface NoticeRepository extends JpaRepository<NoticeEntity, String> {
+public interface NoticeRepository extends JpaRepository<NoticeEntity, Long> {
     
 
 }
