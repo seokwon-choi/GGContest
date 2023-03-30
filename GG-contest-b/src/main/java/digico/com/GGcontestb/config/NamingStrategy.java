@@ -39,5 +39,4 @@ public class NamingStrategy implements PhysicalNamingStrategy {
       .toUpperCase();
     return Identifier.toIdentifier("\""+newName+"\"");
   }
-
 }
