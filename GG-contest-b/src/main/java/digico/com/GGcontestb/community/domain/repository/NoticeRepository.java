@@ -11,6 +11,5 @@ import digico.com.GGcontestb.community.domain.entity.NoticeEntity;
 @Repository
 public interface NoticeRepository extends JpaRepository<NoticeEntity, Long> {
     
-
     Optional<NoticeEntity> findById(Long id);
 }

@@ -1,6 +1,7 @@
 package digico.com.GGcontestb.community.service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -45,6 +46,9 @@ public class NoticeService {
         NoticeEntity noticeEntity = new NoticeEntity();
 
         BeanUtils.copyProperties(noticeDto, noticeEntity, "attachments");
+
+        noticeEntity.setCretDt(LocalDateTime.now());
+        noticeEntity.setUpdDt(LocalDateTime.now());
 
         if(attachments!= null){
             FileEntity fileEntity = new FileEntity();
@@ -128,7 +132,8 @@ public class NoticeService {
         Optional<NoticeEntity> oldOpEntity = noticeRepository.findById(noticeDto.getId());
         NoticeEntity oldEntity = oldOpEntity.get();
 
-        
+        //현재 시각으로 update
+        oldEntity.setUpdDt(LocalDateTime.now());
 
         if(attachments!= null){
             BeanUtils.copyProperties(noticeDto, oldEntity, "attachments");
