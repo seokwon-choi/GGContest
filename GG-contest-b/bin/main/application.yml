@@ -1,0 +1,13 @@
+server:
+    port: 8080
+    shutdown: graceful
+    servlet:
+      session:
+        timeout: 10
+
+spring :
+    application:
+        name: GG-contest-b
+    config:
+        activate:
+          on-profile: default
