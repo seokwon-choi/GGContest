@@ -21,13 +21,13 @@ public class NoticeController {
     private final NoticeService noticeService;
 
     // Create
-    @PostMapping(value = "/createNotice", consumes = { MediaType.APPLICATION_JSON_VALUE,
-            MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE })
-    public Response<Object> createNotice(@RequestPart(value = "notice", required = true) AdmNoticeDto noticeDto,
-            @RequestPart(value = "thumbNail", required = false) MultipartFile noticeImg,
-            @RequestPart(value = "attachments", required = false) List<MultipartFile> imgFile) throws IOException {
-        return noticeService.createNotice(noticeDto, noticeImg, imgFile);
-    }
+    // @PostMapping(value = "/createNotice", consumes = { MediaType.APPLICATION_JSON_VALUE,
+    //         MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE })
+    // public Response<Object> createNotice(@RequestPart(value = "notice", required = true) AdmNoticeDto noticeDto,
+    //         @RequestPart(value = "thumbNail", required = false) MultipartFile noticeImg,
+    //         @RequestPart(value = "attachments", required = false) List<MultipartFile> imgFile) throws IOException {
+    //     return noticeService.createNotice(noticeDto, noticeImg, imgFile);
+    // }
 
     // // Readø
     // // 전체조회
