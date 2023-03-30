@@ -19,7 +19,7 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
-    // // Create
+    // Create
     // @PostMapping(value = "/createNotice", consumes = { MediaType.APPLICATION_JSON_VALUE,
     //         MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE })
     // public Response<Object> createNotice(@RequestPart(value = "notice", required = true) AdmNoticeDto noticeDto,
@@ -28,20 +28,20 @@ public class NoticeController {
     //     return noticeService.createNotice(noticeDto, noticeImg, imgFile);
     // }
 
-    // // Read
-    // // 전체조회
+    // Read
+    // 전체조회
     // @GetMapping(value = "/getNoticeList")
     // public Response<List<AdmNoticeDto>> getNoticeList(Pageable pageable, NoticeQueryParameter noticeQueryParameter) {
     //     return noticeService.getNoticeList(pageable, noticeQueryParameter);
     // }
 
-    // // 상세조회
+    // 상세조회
     // @GetMapping(value = "/getNoticeById")
     // public Response<AdmNoticeDto> getNoticeDetail(@RequestParam(value = "id") String objectId) {
     //     return noticeService.getNoticeDetail(objectId);
     // }
 
-    // // Update
+    // Update
     // @PostMapping(value = "/notice", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE,
     //         MediaType.MULTIPART_FORM_DATA_VALUE })
     // public Response<Object> updateNotice(@RequestPart(value = "notice", required = true) AdmNoticeDto noticeDto,
@@ -51,7 +51,7 @@ public class NoticeController {
     // }
 
 
-    // // GetFile
+    // GetFile
     // @GetMapping(value = "/getNoticeFile")
     // @ApiOperation(value = "이미지 파일 조회")
     // public Response<List<AdmFileResDto>> getNoticeFile(@RequestParam("objectList") List<String> attachments) {
