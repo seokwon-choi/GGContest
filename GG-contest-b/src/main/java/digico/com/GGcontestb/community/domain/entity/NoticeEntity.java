@@ -30,12 +30,12 @@ public class NoticeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String title;
     private String contents;
     //private ArrayList<Long> attachments = new ArrayList<Long>();
     private Long fileId;
-    
+
     @CreatedDate
     private LocalDateTime cretDt;
     @LastModifiedDate
@@ -45,7 +45,7 @@ public class NoticeEntity {
     @LastModifiedBy
     private String updId;
 
-    
 
-    
+
+
 }
