@@ -12,7 +12,8 @@ public class NoticeDetailDto {
     private Long id;
     private String title;
     private String contents;
-    private ArrayList<FileEntity> arrayList = new ArrayList<FileEntity>();
+    //private ArrayList<FileEntity> arrayList = new ArrayList<FileEntity>();
+    private Long fileId;
  
     private LocalDateTime cretDt;
     private LocalDateTime updDt;
