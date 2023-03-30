@@ -13,9 +13,7 @@ import java.util.List;
 import org.springframework.http.MediaType;
 
 import digico.com.GGcontestb.community.domain.dto.NoticeDetailDto;
-import digico.com.GGcontestb.community.domain.dto.NoticeDto;
 import digico.com.GGcontestb.community.domain.dto.NoticeDtoList;
-import digico.com.GGcontestb.community.domain.entity.NoticeEntity;
 import digico.com.GGcontestb.community.service.NoticeService;
 import digico.com.GGcontestb.response.Response;
 import lombok.RequiredArgsConstructor;
