@@ -1,6 +1,7 @@
 package digico.com.GGcontestb.file.domain.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -12,8 +13,9 @@ import lombok.experimental.Accessors;
 public class FileEntity {
 
     @Id
+    @GeneratedValue()
     //@org.springframework.data.annotation.Id
-    private String id;
+    private Long id;
     private String fileNm;
     private byte[] bytes;
     private String contsType;

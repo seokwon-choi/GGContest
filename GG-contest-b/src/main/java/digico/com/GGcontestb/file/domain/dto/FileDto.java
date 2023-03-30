@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class FileDto {
 
-    private String id;
+    private Long id;
     private String fileNm;
     private byte[] bytes;
     private String contsType;
