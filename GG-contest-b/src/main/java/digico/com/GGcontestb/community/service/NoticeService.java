@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import digico.com.GGcontestb.community.domain.dto.NoticeDetailDto;
+import digico.com.GGcontestb.community.domain.dto.NoticeDto;
+import digico.com.GGcontestb.community.domain.dto.NoticeDtoList;
 import digico.com.GGcontestb.community.domain.entity.NoticeEntity;
 import digico.com.GGcontestb.community.domain.repository.NoticeRepository;
 import digico.com.GGcontestb.file.domain.dto.FileDto;
@@ -33,6 +35,8 @@ public class NoticeService {
 
     private final NoticeRepository noticeRepository;
     private final FileRepository fileRepository;
+
+
 
     //공지사항 등록
     @Transactional
@@ -81,21 +85,38 @@ public class NoticeService {
 
 
     //전체조회
-    public Response<Object> getNoticeList() throws IOException {
-        
+    @Transactional
+    public Response<NoticeDtoList> getNoticeList() throws IOException {
 
+        List<NoticeEntity> pageNotice = noticeRepository.findAll();
 
+        List<NoticeDto> noticeList = new ArrayList<>();
 
-        return new Response<Object>().responseOk(HttpStatus.OK);
+        for(NoticeEntity notice: pageNotice){
+            NoticeDto noticeDto = new NoticeDto();
+
+            BeanUtils.copyProperties(notice, noticeDto);
+
+            noticeList.add(noticeDto);
+        }
+
+        NoticeDtoList dtoList = new NoticeDtoList();
+        dtoList.setNoticeList(noticeList);
+        dtoList.setTotalCnt(noticeList.size());
+
+        return new Response<NoticeDtoList>().responseOk(dtoList);
     }
 
     //상세조회
-    public Response<Object> getNoticeDetail() throws IOException {
-    
+    public Response<NoticeDetailDto> getNoticeDetail(Long id) throws IOException {
 
+        Optional<NoticeEntity> noticeOp = noticeRepository.findById(id);
+        NoticeEntity notice = noticeOp.get();
+        NoticeDetailDto noticeDto = new NoticeDetailDto();
 
+        BeanUtils.copyProperties(notice, noticeDto);
 
-        return new Response<Object>().responseOk(HttpStatus.OK);
+        return new Response<NoticeDetailDto>().responseOk(noticeDto);
     }
 
 
