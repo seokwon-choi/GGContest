@@ -6,32 +6,26 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GgContestBApplication",
+            "request": "launch",
+            "mainClass": "digico.com.GGcontestb.GgContestBApplication",
+            "projectName": "GG-contest-b"
+        },
+        {
+            "type": "java",
             "name": "Launch ApiAdminApplication",
             "request": "launch",
-            "mainClass": "com.ktds.act.admin.ApiAdminApplication",
-            "projectName": "apilink-tr",
+            "mainClass": "com.GGcontestb.GgContestBApplication",
+            "projectName": "GG-contest-b",
             "vmArgs": [
                 "-Dspring.profiles.active=local"
-            ],
+            ]
         },
         {
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-ApiAdminApplication",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.ktds.act.admin.ApiAdminApplication",
-            "projectName": "portal-b",
-            "vmArgs": [
-                "-Dspring.profiles.active=local",
-                "-Dcommon.db=mongo"
-            ],
-            "envFile": "${workspaceFolder}/.env"
         }
     ]
   }
