@@ -6,11 +6,11 @@ import lombok.Data;
 
 @Data
 public class NoticeDto {
-    
+
     private Long id;
     private String title;
     private String contents;
- 
+
     private LocalDateTime cretDt;
     private LocalDateTime updDt;
     private String cretId;

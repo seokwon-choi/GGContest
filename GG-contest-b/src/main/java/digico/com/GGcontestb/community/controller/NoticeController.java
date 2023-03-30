@@ -14,6 +14,8 @@ import org.springframework.http.MediaType;
 
 import digico.com.GGcontestb.community.domain.dto.NoticeDetailDto;
 import digico.com.GGcontestb.community.domain.dto.NoticeDto;
+import digico.com.GGcontestb.community.domain.dto.NoticeDtoList;
+import digico.com.GGcontestb.community.domain.entity.NoticeEntity;
 import digico.com.GGcontestb.community.service.NoticeService;
 import digico.com.GGcontestb.response.Response;
 import lombok.RequiredArgsConstructor;
@@ -37,16 +39,16 @@ public class NoticeController {
 
     // Read
     // 전체조회
-    // @GetMapping(value = "/getNoticeList")
-    // public Response<List<AdmNoticeDto>> getNoticeList(Pageable pageable, NoticeQueryParameter noticeQueryParameter) {
-    //     return noticeService.getNoticeList(pageable, noticeQueryParameter);
-    // }
+    @GetMapping(value = "/getNoticeList")
+    public Response<NoticeDtoList> getNoticeList() throws IOException {
+        return noticeService.getNoticeList();
+    }
 
     // 상세조회
-    // @GetMapping(value = "/getNoticeById")
-    // public Response<AdmNoticeDto> getNoticeDetail(@RequestParam(value = "id") String objectId) {
-    //     return noticeService.getNoticeDetail(objectId);
-    // }
+    @GetMapping(value = "/getNoticeById")
+    public Response<NoticeDetailDto> getNoticeDetail(Long id) throws IOException {
+        return noticeService.getNoticeDetail(id);
+    }
 
     // Update
     // @PostMapping(value = "/notice", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE,
@@ -65,5 +67,5 @@ public class NoticeController {
     //     return noticeService.getNoticeFile(attachments);
     // }
 
-    
+
 }
