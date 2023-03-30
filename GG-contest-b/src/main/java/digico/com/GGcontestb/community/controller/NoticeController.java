@@ -14,9 +14,7 @@ import java.util.List;
 import org.springframework.http.MediaType;
 
 import digico.com.GGcontestb.community.domain.dto.NoticeDetailDto;
-import digico.com.GGcontestb.community.domain.dto.NoticeDto;
 import digico.com.GGcontestb.community.domain.dto.NoticeDtoList;
-import digico.com.GGcontestb.community.domain.entity.NoticeEntity;
 import digico.com.GGcontestb.community.service.NoticeService;
 import digico.com.GGcontestb.file.domain.dto.FileResDto;
 import digico.com.GGcontestb.response.Response;
@@ -52,13 +50,11 @@ public class NoticeController {
     }
 
     // Update
-    // @PostMapping(value = "/notice", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE,
-    //         MediaType.MULTIPART_FORM_DATA_VALUE })
-    // public Response<Object> updateNotice(@RequestPart(value = "notice", required = true) AdmNoticeDto noticeDto,
-    //         @RequestPart(value = "thumbNail", required = false) MultipartFile noticeImg,
-    //         @RequestPart(value = "attachments", required = false) List<MultipartFile> imgFile) throws IOException {
-    //     return noticeService.updateNotice(noticeDto, noticeImg, imgFile);
-    // }
+    @PostMapping(value = "/notice", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE })
+    public Response<Object> updateNotice(@RequestPart(value = "notice", required = true) NoticeDetailDto noticeDto,
+            @RequestPart(value = "attachments", required = false) MultipartFile attachments) throws IOException {
+        return noticeService.updateNotice(noticeDto, attachments);
+    }
 
 
     // GetFile
